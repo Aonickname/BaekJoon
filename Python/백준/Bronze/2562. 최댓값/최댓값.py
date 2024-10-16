@@ -1,11 +1,8 @@
-arr = [0] * 9
+arr = []
 
-for i in range(9):
-    arr[i] = int(input())
+for _ in range(9):
+    i = int(input())
+    arr.append(i)
 
 print(max(arr))
-
-for i in range(9):
-    if max(arr) == arr[i]:
-        print(i+1)
-        break
+print(arr.index(max(arr))+1)
