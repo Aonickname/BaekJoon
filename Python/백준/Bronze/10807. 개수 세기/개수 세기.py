@@ -1,5 +1,6 @@
 N = int(input())
-arr = list(map(int, input().split()))
-seek = int(input())
 
-print(arr.count(seek))
+arr = list(map(int, input().split()))
+v = int(input())
+
+print(arr.count(v))
