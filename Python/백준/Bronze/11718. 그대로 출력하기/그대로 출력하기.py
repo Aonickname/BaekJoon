@@ -1,4 +1,4 @@
 import sys
 
-input_text = sys.stdin.read()
-print(input_text)
+for line in sys.stdin:
+    print(line.strip())
