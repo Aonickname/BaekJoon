@@ -1,31 +1,20 @@
 while True:
     n = int(input())
-    result = 0
-    sum = 0
-
     if n == -1:
         break
 
-    for i in range(1, n):
+    divisors = []
+
+    for i in range(1, int(n**0.5) + 1):
         if n % i == 0:
-            result += i
+            divisors.append(i)
+            if i != 1 and i != n // i:
+                divisors.append(n // i)
 
-    if result == n:
-        print(f"{n} = ", end ="")
+    total = sum(divisors)
 
-        for i in range(1, n):
-            if n % i == 0:
-                print(f"{i}", end = "")
-                sum += i
-
-                if sum == n:
-                    break
-                print(f" + ", end = "")
-
-            
-            
-        
-        print()
-
+    if total == n:
+        divisors.sort()
+        print(f"{n} = {' + '.join(map(str, divisors))}")
     else:
         print(f"{n} is NOT perfect.")
