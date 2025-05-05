@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 int main(void){
-    int N = 1234;
-    int arr[100] = {0};
-    int temp = 0;
+    int N = 0;
+    int arr[10] = {0};
     int k = 0;
 
     scanf("%d", &N);
@@ -14,10 +13,10 @@ int main(void){
         k++;
     }
 
-    for (int i = 0; i < k; i++){
-        for (int j = i; j < k; j++){
+    for (int i = 0; i < k - 1; i++){
+        for (int j = i + 1; j < k; j++){
             if(arr[i] < arr[j]){
-                temp = arr[i];
+                int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
             }            
