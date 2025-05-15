@@ -1,23 +1,21 @@
 #include <stdio.h>
 
 int main(void){
-    int N, i = 0;
-    int temp[100] = {0};
-    int Ntemp, sum = 0;
-    int realN = 0;
+    int realN, N, sum, Ntemp;
 
     scanf("%d", &realN);
 
-    for (N = 0; N < realN; N++){
-        Ntemp = N;
-        i = 0;
+    int start = realN - 9 * 7;
+    if (start < 0) start = 0;
+    
+
+    for (N = start; N < realN; N++){
         sum = 0;
+        Ntemp = N;
 
         while (Ntemp != 0){
-            temp[i] = Ntemp % 10;
-            sum += temp[i];
+            sum += Ntemp % 10;
             Ntemp /= 10;
-            i++;
         }
         
         if (N + sum == realN){
