@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main {
+    public static long lcm(long a, long b) {
+
+        while (b != 0) {
+            long temp = a % b;
+            a = b;
+            b = temp;
+        }
+
+        return a;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        long A = sc.nextLong();
+        long B = sc.nextLong();
+
+        System.out.println((A * B) / lcm(A, B));
+
+    }
+}
